@@ -11,4 +11,4 @@ class Dog(models.Model):
     user = models.ForeignKey(User)
 
     def __str__(self):
-    	return self.name
+        return self.name

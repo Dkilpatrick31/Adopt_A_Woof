@@ -2,6 +2,7 @@ from django.conf.urls import url
 from main_app import views
 
 urlpatterns = [
+    url(r'^$', views.index, name="index"),
     url(r'^user/(\w+)/$', views.profile, name='profile'),
     url(r'^([0-9]+)/$', views.dogprofile, name="dogprofile"),
     url(r'^new/$', views.post_dog, name="post_dog"),
@@ -12,5 +13,6 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     # url(r'^post/$', views.post_dog, name="post_dog"),
     url(r'^about/$', views.about, name='about'),
-    url(r'^$', views.index, name="index")
+    url(r'^results/$', views.results, name="results")
+
 ]

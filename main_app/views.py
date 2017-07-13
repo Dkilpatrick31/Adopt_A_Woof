@@ -61,7 +61,7 @@ def post_dog(request):
         dog = form.save(commit = False)
     dog.user = request.user
     dog.save()
-    return HttpResponseRedirect('/')
+    return render(request, 'results.html', {'dog': dog})
 
 def profile(request, username):
     user = User.objects.get(username=username)
@@ -89,10 +89,14 @@ def about(request):
     form = DogForm()
     return render(request, 'about.html', {'dogs':dogs, 'form':form})
 
-def about(request):
+def results(request):
     dogs = Dog.objects.all()
     form = DogForm()
-    return render(request, 'about.html', {'dogs':dogs, 'form':form})
+    return render(request, 'results.html', {'dogs':dogs, 'form':form})
+
+def results(request):
+    return render(request, 'results.html')
+
 
 def like_dog(request):
     dog_id = request.GET.get('dog_id', None)

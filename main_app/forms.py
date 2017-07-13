@@ -11,6 +11,9 @@ class SignUpForm(UserCreationForm):
     first_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     last_name = forms.CharField(max_length=30, required=False, help_text='Optional.')
     username = forms.CharField(label="User Name", max_length=64)
+    password1 = forms.CharField(widget=forms.PasswordInput())
+    password2 = forms.CharField(widget=forms.PasswordInput())
+
 
     class Meta:
         model = User
@@ -19,4 +22,4 @@ class SignUpForm(UserCreationForm):
 class DogForm(forms.ModelForm):
     class Meta:
         model = Dog
-        fields = ['name', 'breed', 'color', 'gender', 'location']
+        fields = ['name', 'breed', 'age', 'gender']
