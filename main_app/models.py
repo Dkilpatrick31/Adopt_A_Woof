@@ -10,13 +10,5 @@ class Dog(models.Model):
     age = models.CharField(max_length=100)
     user = models.ForeignKey(User)
 
-    # Figure out how to get these other classifications to work!
-
-    # location = models.CharField(max_length=100)
-    # childcompatability = models.CharField(max_length=100)
-    # catcompatability = models.CharField(max_length=100)
-    # dogcompatability = models.CharField(max_length=100)
-    # description = models.CharField(max_length=100)
-
     def __str__(self):
     	return self.name

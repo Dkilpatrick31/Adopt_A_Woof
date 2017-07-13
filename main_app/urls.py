@@ -1,10 +1,5 @@
-# main_app/urls.py
 from django.conf.urls import url
 from main_app import views
-# from views import index
-# from views import dogprofile
-# from views import post_dog
-# from views import update_dog
 
 urlpatterns = [
     url(r'^user/(\w+)/$', views.profile, name='profile'),

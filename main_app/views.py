@@ -89,6 +89,11 @@ def about(request):
     form = DogForm()
     return render(request, 'about.html', {'dogs':dogs, 'form':form})
 
+def about(request):
+    dogs = Dog.objects.all()
+    form = DogForm()
+    return render(request, 'about.html', {'dogs':dogs, 'form':form})
+
 def like_dog(request):
     dog_id = request.GET.get('dog_id', None)
 
@@ -101,12 +106,6 @@ def like_dog(request):
             dog.save()
     return HttpResponse(likes)
 
-
-# def about(request):
-#     return render(request, 'about.html', {'dogs':dogs})
-
-
-# Create your views here.
 dogs = [
     Dog('Buck', 500.00, 'male', 'labrador/golden retriever mixed', '8 years old'),
     Dog('Nahla', 0, 'female', 'maltipoo', '4 years old'),
