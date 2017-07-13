@@ -61,10 +61,11 @@ header .header-content {
 
 }
 
-.profile-header {
+.h4 .profile-header {
 	font-size: 80px;
 	margin-bottom: 15px;
 	margin-top: 50px;
+	background-color: white;
 }
 
 .navbar {

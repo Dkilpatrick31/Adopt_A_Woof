@@ -4,96 +4,82 @@
 {% block content %}
 <header>
   <div class="text-center">
-    <h2 class="profile-header"> Profile </h2>
+    <h2 class="profile-header">Pick your new bestfriend!</h2>
   </div>
 </header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title text-center" id="myModalLabel">{{username}}'s Profile</h4>
+      <div class="model-content">
+        <div class="model-header">
+          <h4 class="model-title text-center" id="mymodelLabel">{{user.username}}'s Adoptable Dogs</h4>
         </div>
-        <div class="modal-body">
+        <div class="model-body">
           <div class="row">
             <div class="col-xs-24">
               <div class="well text-center scroll">
+                {% for dog in dogs %}
+                <div class="col-sm-4 col-xs-8">
+                  <img src="https://images8.alphacoders.com/431/431158.jpg" class="img-responsive" />
+                <h4>Gunnar</h4>
                 <a href="/{{dog.id}}">
-                  <h4>Email: {{user.email}}</h4>
-                  <p> First Name: {{user.first_name}}</pS>
-                  <p> Last Name: {{user.last_name}}</pS>
-                  <p> Member Since: {{ dog.breed }}</p>
+                  <h4>Name: {{ dog.name }}</h4>
+                  <p> Gender: {{ dog.gender }}</pS>
+                  <p> Age: {{ dog.age }}</pS>
+                  <p> Breed: {{ dog.breed }}</p>
                 </a>
-              </div>
+                <a href="{% url 'profile' user.username %}"><button type="submit" class="btn btn-success" >Save</button></a>
+                </div>
+                <div class="col-sm-4 col-xs-8">
+                  <img src="https://images8.alphacoders.com/431/431158.jpg" class="img-responsive" />
+                <h4>Gunnar</h4>
+                <a href="/{{dog.id}}">
+                  <h4>Name: {{ dog.name }}</h4>
+                  <p> Gender: {{ dog.gender }}</pS>
+                  <p> Age: {{ dog.age }}</pS>
+                  <p> Breed: {{ dog.breed }}</p>
+                </a>
+                <a href="{% url 'profile' user.username %}"><button type="submit" class="btn btn-success" >Save</button></a>
+                </div>
+                <div class="col-sm-4 col-xs-8">
+                  <img src="https://images8.alphacoders.com/431/431158.jpg" class="img-responsive" />
+                <h4>Gunnar</h4>
+                <a href="/{{dog.id}}">
+                  <h4>Name: {{ dog.name }}</h4>
+                  <p> Gender: {{ dog.gender }}</pS>
+                  <p> Age: {{ dog.age }}</pS>
+                  <p> Breed: {{ dog.breed }}</p>
+                </a>
+                <a href="{% url 'profile' user.username %}"><button type="submit" class="btn btn-success" >Save</button></a>
+                </div>
+                <div class="form-group col-md-24">
+                  <div class="col-sm-4 col-xs-8">
+                    <img src="http://cdn.akc.org/Marketplace/Breeds/Dachshund_SERP.jpg" class="img-responsive" />
+                  <h4>Gunnar</h4>
+                  <a href="/{{dog.id}}">
+                    <h4>Name: {{ dog.name }}</h4>
+                    <p> Gender: {{ dog.gender }}</pS>
+                    <p> Age: {{ dog.age }}</pS>
+                    <p> Breed: {{ dog.breed }}</p>
+                  </a>
+                  <a href="{% url 'profile' user.username %}"><button type="submit" class="btn btn-success" >Save</button></a>
+                  </div>
+                  <div class="col-sm-4 col-xs-8">
+                    <img src="https://gfp-2a3tnpzj.stackpathdns.com/wp-content/uploads/2016/07/Dachshund-600x600.jpg" class="img-responsive" />
+                  <h4>Gunnar</h4>
+                  <a href="/{{dog.id}}">
+                    <h4>Name: {{ dog.name }}</h4>
+                    <p> Gender: {{ dog.gender }}</pS>
+                    <p> Age: {{ dog.age }}</pS>
+                    <p> Breed: {{ dog.breed }}</p>
+                  </a>
+                  <a href="{% url 'profile' user.username %}"><button type="submit" class="btn btn-success" >Save</button></a>
+                  </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
-    <div class="col-md-12" style=S
-    "margin-top: 0px;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title text-center" id="myModalLabel">{{username}}'s Picks</h4>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-xs-24">
-              <div class="well text-center scroll">
-          {% for dog in dogs %}
-            <a href="/{{dog.id}}">
-
-                <p>Name: {{ dog.name }}</p>
-              {% if dog.value > 0 %}
-                <p>Value: {{ dog.value}}</p>
-              {% else %}
-                <p>Value: Unknown</p>
-              {% endif%}
-              </a>
-            </a>
-            <a href="{% url 'update_dog' dog.id %}">Edit</a>
-            <a href="{% url 'delete_dog' dog.id %}">Delete</a>
-            {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <button id ="likes" data-id="{{dog.id}}" class="btn btn-mini btn-danger glyphicon glyphicon-heart" type="button">Next
-        {% if dog.likes > 0 %} {{ dog.likes }}{% endif %}
-      </button>
-    </div>
-    <div class="col-sm-12 text-center">
-      {% for dog in dogs %}
-
-        <hr />
-      {% endfor %}
-        <form action="post_url/" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit" />
-        </form>
-    </div>
-
-  </div>
-</div>
+    {% endfor %}
 
 {% endblock %}
-
-
-
-
-<div class="col-sm-12 text-center">
-  <button id ="likes" data-id="{{dog.id}}" class="btn btn-mini btn-danger glyphicon glyphicon-heart" type="button">Next
-    {% if dog.likes > 0 %} {{ dog.likes }}{% endif %}
-  </button>
-</div>

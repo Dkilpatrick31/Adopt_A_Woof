@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^signup/$', views.signup, name='signup'),
     # url(r'^post/$', views.post_dog, name="post_dog"),
     url(r'^about/$', views.about, name='about'),
+    url(r'^filter/$', views.filter, name="filter"),
     url(r'^results/$', views.results, name="results")
 
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Dog
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -13,7 +13,6 @@ def index(request):
 
 def login_view(request):
     if request.method == 'POST':
-        # if post, then authenticate (user submitted username and password)
         form = LoginForm(request.POST)
         if form.is_valid():
             u = form.cleaned_data['username']
@@ -89,14 +88,15 @@ def about(request):
     form = DogForm()
     return render(request, 'about.html', {'dogs':dogs, 'form':form})
 
+def filter(request):
+    dogs = Dog.objects.all()
+    form = DogForm()
+    return render(request, 'filter.html', {'dogs':dogs, 'form':form})
+
 def results(request):
     dogs = Dog.objects.all()
     form = DogForm()
     return render(request, 'results.html', {'dogs':dogs, 'form':form})
-
-def results(request):
-    return render(request, 'results.html')
-
 
 def like_dog(request):
     dog_id = request.GET.get('dog_id', None)

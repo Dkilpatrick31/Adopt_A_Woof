@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<header>
+  <div class="text-center">
+    <h2> Filter your new bestfriend! </h2>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="model-content">
+        <div class="model-header">
+        </div>
+        <div class="model-body">
+          <div class="row">
+            <div class="col-xs-24">
+              <div class="well text-center scroll">
+                <form class="form-horizontal">
+                <fieldset>
+
+                <legend>Form Name</legend>
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">What breed of dog are you looking for?</label>
+                  <div class="col-md-4">
+                  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">What gender do you want the dog to be?</label>
+                  <div class="col-md-4">
+                  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">What age range are you looking for in your dog?</label>
+                  <div class="col-md-4">
+                  <input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md">
+                  </div>
+                </div>
+                </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <a href="{% url 'results' %}"><button id ="likes" data-id="{{dog.id}}"  class="btn btn-success" type="button">Generate Dogs!</button></a>
+    </div>
+    <div class="col-sm-12 text-center">
+      {% for dog in dogs %}
+        <hr />
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
