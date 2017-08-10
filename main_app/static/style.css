@@ -1,35 +1,31 @@
-/*header {
-	position: relative;
+body {
+	background-image: url('http://www.dogbreedslist.info/dog-wallpapers/Golden-Retriever-puppy-cute-paws-2560x1600.jpg');
+  font-family: 'Titillium Web', sans-serif;
 	width: 100%;
-	min-height: auto;
+	height: 100%;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	background-size: cover;
-	min-height: 40%;
+	position: relative;
+	font-family: 'Noticia Text', serif;
 }
 
-.jumbotron {
-	background-image: url('http://wallpapercave.com/wp/BKi0nGl.jpg');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	min-height: 40%;
-	color: white;
+h1 {
+  text-align: center;
+  color: #1e1f25;
+  font-weight: 180px;
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
-
-.navbar-inverse .navbar-brand:hover {
-    color: black;
+h2 {
+	margin-top: 5px;
+	color: #1e1f25;
+	font-family: 'Josefin Sans', sans-serif;
+	text-transform: uppercase;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover {
-	color: black;
-
-}
-
-.navbar-inverse {
-	margin-bottom: 0px;
-}*/
 
 
 header {
@@ -50,7 +46,10 @@ header .header-content {
 	padding: 100px 15px;
 	text-align: center;
 	font-family: 'Josefin Sans', sans-serif;
+}
 
+select {
+	width: 52px;
 }
 
 .header-name {
@@ -58,7 +57,6 @@ header .header-content {
 		font-family: 'Josefin Sans', sans-serif;
 		margin-top: 50px;
 		margin-bottom: 0px;
-
 }
 
 .h4 .profile-header {
@@ -72,20 +70,17 @@ header .header-content {
 	background-color: transparent;
 	border: #FFFFFF;
 	font-family: 'Josefin Sans', sans-serif;
-
 }
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-brand {
     color: #FFFFFF;
 		text-transform: uppercase;
-
 }
 
 .navbar-inverse .navbar-brand:hover {
 	background-color: grey;
 	color: white;
 		text-transform: uppercase;
-
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
@@ -103,39 +98,10 @@ header .header-content {
 	margin-bottom: 0px;
 }
 
-h1 {
-  text-align: center;
-  color: #1e1f25;
-  font-weight: 180px;
-	text-transform: uppercase;
-	font-family: 'Josefin Sans', sans-serif;
-
-}
-
-h2 {
-	margin-top: 5px;
-	color: #1e1f25;
-	font-family: 'Josefin Sans', sans-serif;
-	text-transform: uppercase;
-}
-
 .header-tag-line {
 	font-size: 19px;
 	margin-top: 5px;
 	margin-bottom: 29px;
-}
-
-body {
-	background-image: url('http://www.dogbreedslist.info/dog-wallpapers/Golden-Retriever-puppy-cute-paws-2560x1600.jpg');
-  font-family: 'Titillium Web', sans-serif;
-	width: 100%;
-	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	position: relative;
-	font-family: 'Noticia Text', serif;
 }
 
 .scroll {
@@ -151,10 +117,6 @@ body {
 
 .listing-content{
 	text-align: left;
-}
-
-select {
-	width: 52px;
 }
 
 /****** LOGIN model ******/
