@@ -23,7 +23,6 @@ A web-based application utilizing IBM Watson Conversation and Natural Language U
 * Django static files
 * urlpatterns
 * Django packages
-*
 
 ## Django Packages reviewed
 * rest_framework
